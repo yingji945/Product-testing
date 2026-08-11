@@ -691,8 +691,28 @@
       color: var(--muted);
       font-size: 12px;
       line-height: 1.35;
-      min-height: 32px;
+      min-height: 18px;
       margin-bottom: 8px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 5px;
+    }
+
+    .product-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 18px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      background: #f3f0e6;
+      color: #9b7d43;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.1;
     }
 
     .price-row {
@@ -2475,7 +2495,8 @@
             ${productVisual(product)}
             <div class="info">
               <div class="name">${product.name}</div>
-              <div class="desc">${product.desc}</div>
+              <div class="product-tags"><span>可选黑巧风味加浓</span><span>多款奶基可选</span></div>
+              <div class="desc">喝前摇一摇，自定义更多隐藏喝法</div>
               <div class="price-row">
                 <div class="price">¥ <strong>${formatPrice(product.price)}</strong></div>
                 <button class="add" type="button" data-index="${productIndex}" aria-label="加入购物袋">+</button>
