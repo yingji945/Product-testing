@@ -1416,43 +1416,298 @@
     }
 
     .order-body {
-      padding: 14px 14px 92px;
+      padding: 12px 14px 118px;
       overflow-y: auto;
       flex: 1;
+      background: #eef1fb;
     }
 
     .order-block {
       background: #fff;
-      border-radius: 8px;
-      padding: 14px;
+      border-radius: 18px;
+      padding: 16px;
       margin-bottom: 12px;
     }
 
     .order-block h2 {
-      font-size: 16px;
-      margin: 0 0 12px;
+      font-size: 18px;
+      margin: 0;
     }
 
-    .order-row {
+    .pickup-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .pickup-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 48px;
+      background: #f2f4fb;
+      font-size: 17px;
+      font-weight: 900;
+      color: #7b8290;
+      text-align: center;
+    }
+
+    .pickup-tabs span {
+      display: grid;
+      place-items: center;
+      border-radius: 18px 18px 0 0;
+    }
+
+    .pickup-tabs .active {
+      background: #fff;
+      color: #1f2530;
+    }
+
+    .pickup-content {
+      padding: 14px 16px 18px;
+      background:
+        radial-gradient(circle at 88% 55%, rgba(192, 202, 222, .22), transparent 23%),
+        #fff;
+    }
+
+    .store-line {
       display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 10px 0;
-      border-bottom: 1px solid #f0f2f5;
-      font-size: 14px;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 900;
+      color: #1f2530;
+      margin-bottom: 9px;
     }
 
-    .order-row:last-child {
-      border-bottom: 0;
-    }
-
-    .order-row span {
-      color: var(--muted);
+    .buy-tag {
+      background: var(--blue);
+      color: #fff;
+      border-radius: 3px;
+      padding: 3px 8px;
+      font-size: 13px;
+      line-height: 1;
       white-space: nowrap;
     }
 
-    .order-row strong {
+    .store-address {
+      color: #747b87;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .pickup-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #1f2530;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .pickup-meta strong {
+      font-size: 17px;
+      color: var(--blue);
+    }
+
+    .order-product {
+      display: grid;
+      grid-template-columns: 96px 1fr 58px;
+      gap: 12px;
+      align-items: center;
+      min-height: 128px;
+    }
+
+    .order-thumb {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: #eef8ff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .order-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 5px;
+    }
+
+    .order-thumb img.tall {
+      padding: 2px 22px;
+    }
+
+    .order-product-name {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #1f2530;
+      margin-bottom: 6px;
+    }
+
+    .order-product-spec {
+      color: #717884;
+      font-size: 14px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .order-coupon-tag {
+      display: inline-flex;
+      padding: 4px 7px;
+      border-radius: 4px;
+      background: #fff1ea;
+      color: #e85a38;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .order-product-side {
       text-align: right;
+      align-self: start;
+      padding-top: 10px;
+      color: #1f2530;
+      font-size: 13px;
+    }
+
+    .order-product-side strong {
+      display: block;
+      color: #ff5c32;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .order-product-side s {
+      display: block;
+      color: #8e95a1;
+      margin-bottom: 6px;
+    }
+
+    .exchange-head {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .exchange-head span {
+      color: #f05b46;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .exchange-scroller {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+
+    .exchange-scroller::-webkit-scrollbar {
+      display: none;
+    }
+
+    .exchange-card {
+      flex: 0 0 132px;
+      border: 0;
+      border-radius: 8px;
+      background: #f3fbff;
+      text-align: left;
+      padding: 10px;
+      min-height: 178px;
+      cursor: pointer;
+    }
+
+    .exchange-card:nth-child(2) {
+      background: #fff9f2;
+    }
+
+    .exchange-card:nth-child(3) {
+      background: #fff6f1;
+    }
+
+    .exchange-visual {
+      height: 72px;
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .exchange-name {
+      font-size: 14px;
+      font-weight: 900;
+      color: #1f2530;
+      line-height: 1.25;
+      min-height: 36px;
+      margin-bottom: 4px;
+    }
+
+    .exchange-count {
+      color: #8a9099;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .exchange-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .exchange-price {
+      color: #ff5c32;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .exchange-price strong {
+      font-size: 18px;
+    }
+
+    .exchange-add {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .discount-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      color: #1f2530;
+      font-size: 15px;
+    }
+
+    .discount-row:first-of-type {
+      padding-top: 14px;
+    }
+
+    .discount-row .note {
+      color: #f05b46;
+      font-size: 13px;
+      margin-left: 6px;
+    }
+
+    .discount-row strong {
+      color: #1f2530;
+      font-size: 17px;
+    }
+
+    .discount-row .saving {
+      color: #ff5c32;
     }
 
     .field {
@@ -1486,35 +1741,42 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 74px;
+      height: 92px;
       background: #fff;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1.55fr;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
-      padding: 10px 14px 14px;
+      padding: 12px 16px 18px;
       border-top: 1px solid var(--line);
     }
 
     .pay {
       border: 0;
-      border-radius: 22px;
+      height: 56px;
+      border-radius: 28px;
       background: var(--blue);
       color: #fff;
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 900;
-      padding: 12px 22px;
       cursor: pointer;
     }
 
     .total {
-      color: #ff5c32;
-      font-size: 13px;
+      color: #1f2530;
+      font-size: 14px;
       font-weight: 900;
     }
 
     .total strong {
-      font-size: 22px;
+      font-size: 30px;
+      color: #000;
+      margin-right: 6px;
+    }
+
+    .total span {
+      color: #ff5c32;
+      font-weight: 800;
     }
 
     .success {
@@ -1730,34 +1992,55 @@
         <h1>确认订单</h1>
       </div>
       <div class="order-body">
-        <div class="order-block">
-          <h2>城奥大厦店</h2>
-          <div class="order-row"><span>取餐方式</span><strong>到店自提</strong></div>
-          <div class="order-row"><span>预计完成</span><strong>约 10 分钟</strong></div>
-        </div>
-        <div class="order-block">
-          <h2>商品明细</h2>
+        <section class="order-block pickup-card">
+          <div class="pickup-tabs"><span class="active">自提</span><span>外送</span></div>
+          <div class="pickup-content">
+            <div class="store-line"><span class="buy-tag">买过</span>城奥大厦店 〉</div>
+            <div class="store-address">朝阳区安定路5号城奥大厦一层大堂</div>
+            <div class="pickup-meta"><span>预计<strong>10:49</strong>可取餐</span><span>距您<strong>53m</strong>，附近有多家门店</span></div>
+          </div>
+        </section>
+
+        <section class="order-block">
           <div id="orderItems"></div>
-        </div>
-        <div class="order-block">
-          <h2>联系人</h2>
-          <div class="field">
-            <label for="name">姓名</label>
-            <input id="name" value="刘先生">
+        </section>
+
+        <section class="order-block">
+          <div class="exchange-head">
+            <h2>超值换购</h2>
+            <span>近期有572人换购</span>
           </div>
-          <div class="field">
-            <label for="phone">手机号</label>
-            <input id="phone" value="138 0000 0000">
+          <div class="exchange-scroller" id="exchangeItems">
+            <button class="exchange-card" type="button" data-name="抹茶乳酪贝果" data-price="5.9">
+              <div class="exchange-visual">🍵</div>
+              <div class="exchange-name">抹茶乳酪贝果</div>
+              <div class="exchange-count">有56人换购</div>
+              <div class="exchange-bottom"><span class="exchange-price">¥<strong>5.9</strong></span><span class="exchange-add">+</span></div>
+            </button>
+            <button class="exchange-card" type="button" data-name="巴斯克芝士吐司" data-price="4.9">
+              <div class="exchange-visual">🍞</div>
+              <div class="exchange-name">巴斯克芝士吐司</div>
+              <div class="exchange-count">有104人换购</div>
+              <div class="exchange-bottom"><span class="exchange-price">¥<strong>4.9</strong></span><span class="exchange-add">+</span></div>
+            </button>
+            <button class="exchange-card" type="button" data-name="蜂蜜云朵蛋糕" data-price="2.9">
+              <div class="exchange-visual">🍯</div>
+              <div class="exchange-name">蜂蜜云朵蛋糕</div>
+              <div class="exchange-count">有95人换购</div>
+              <div class="exchange-bottom"><span class="exchange-price">¥<strong>2.9</strong></span><span class="exchange-add">+</span></div>
+            </button>
           </div>
-          <div class="field">
-            <label for="note">备注</label>
-            <input id="note" placeholder="少冰、少糖等需求">
-          </div>
-        </div>
+        </section>
+
+        <section class="order-block">
+          <h2>瑞幸优惠 <span class="note">已为您选择最佳优惠</span></h2>
+          <div class="discount-row"><span>咖啡卡券</span><strong class="saving" id="orderDiscount">-￥0</strong></div>
+          <div class="discount-row"><span>瑞王卡·当单可用</span><strong>首月￥0.01</strong></div>
+        </section>
       </div>
       <div class="order-foot">
-        <div class="total">合计 <strong id="orderTotal">¥0</strong></div>
-        <button class="pay" type="button" id="submitOrder">提交订单</button>
+        <div class="total"><strong id="orderTotal">¥0</strong><span id="orderSaved">已优惠¥0</span></div>
+        <button class="pay" type="button" id="submitOrder">0元下单</button>
       </div>
     </section>
 
@@ -1987,6 +2270,9 @@
     const successScreen = document.getElementById("successScreen");
     const orderItems = document.getElementById("orderItems");
     const orderTotal = document.getElementById("orderTotal");
+    const orderDiscount = document.getElementById("orderDiscount");
+    const orderSaved = document.getElementById("orderSaved");
+    const submitOrder = document.getElementById("submitOrder");
 
     function formatPrice(value) {
       return Number.isInteger(value) ? String(value) : value.toFixed(1);
@@ -2016,6 +2302,13 @@
         <div class="beans"><span></span><span></span><span></span></div>
         <div class="${product.visual}"></div>
       `;
+    }
+
+    function itemImage(product, imageClass = "") {
+      if (product.image) {
+        return `<img class="${product.imageClass || imageClass}" src="${product.image}" alt="">`;
+      }
+      return drawerImage(product);
     }
 
     function detailImage(product) {
@@ -2155,14 +2448,28 @@
     function openOrder() {
       if (cart.length === 0) return;
       closeCartDrawer();
-      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const rawTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const discount = Math.min(20, rawTotal);
+      const total = Math.max(0, rawTotal - discount);
       orderItems.innerHTML = cart.map((item) => `
-        <div class="order-row">
-          <strong>${item.name} × ${item.quantity}</strong>
-          <span>¥${formatPrice(item.price * item.quantity)}</span>
-        </div>
+        <article class="order-product">
+          <div class="order-thumb">${itemImage(item)}</div>
+          <div>
+            <div class="order-product-name">${item.name}</div>
+            <div class="order-product-spec">${item.spec || "标准规格"} / 居家即享</div>
+            <span class="order-coupon-tag">咖啡卡券</span>
+          </div>
+          <div class="order-product-side">
+            <strong>¥${formatPrice(item.price * item.quantity)}</strong>
+            <s>¥${formatPrice((item.price + 20) * item.quantity)}</s>
+            <span>x${item.quantity}</span>
+          </div>
+        </article>
       `).join("");
       orderTotal.textContent = `¥${formatPrice(total)}`;
+      orderDiscount.textContent = `-￥${formatPrice(discount)}`;
+      orderSaved.textContent = `已优惠¥${formatPrice(discount)}`;
+      submitOrder.textContent = `${formatPrice(total)}元下单`;
       orderScreen.classList.add("show");
     }
 
@@ -2216,6 +2523,19 @@
         if (item.quantity <= 0) cart.splice(index, 1);
       }
       updateCart();
+    });
+    document.getElementById("exchangeItems").addEventListener("click", (event) => {
+      const card = event.target.closest(".exchange-card");
+      if (!card) return;
+      addToCart({
+        name: card.dataset.name,
+        desc: "超值换购商品",
+        price: Number(card.dataset.price),
+        spec: "1份",
+        visual: "latte",
+        photo: "cream"
+      });
+      openOrder();
     });
     document.getElementById("detailBack").addEventListener("click", closeProductDetail);
     document.getElementById("detailMinus").addEventListener("click", () => updateDetailQuantity(detailQuantity - 1));
