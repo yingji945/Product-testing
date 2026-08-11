@@ -1635,6 +1635,18 @@
       place-items: center;
       font-size: 42px;
       margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .exchange-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 2px;
+    }
+
+    .exchange-visual img.tall {
+      padding: 0 28px;
     }
 
     .exchange-name {
@@ -2338,9 +2350,35 @@
     let cart = [];
     let exchangeCart = [];
     const exchangeProducts = [
-      { name: "抹茶乳酪贝果", desc: "有56人换购", price: 5.9, originalPrice: 9, visual: "🍵" },
-      { name: "巴斯克芝士吐司", desc: "有104人换购", price: 4.9, originalPrice: 7, visual: "🍞" },
-      { name: "蜂蜜云朵蛋糕", desc: "有95人换购", price: 2.9, originalPrice: 5, visual: "🍯" }
+      {
+        name: "醇香浓缩咖啡液·意式风味2颗",
+        desc: "有56人换购",
+        price: 9.9,
+        originalPrice: 19.9,
+        image: "assets/espresso-liquid-2.png",
+        spec: "18ml*2颗",
+        photo: "ice"
+      },
+      {
+        name: "瑞幸生椰拿铁咖啡饮料300mL",
+        desc: "有104人换购",
+        price: 12.9,
+        originalPrice: 18,
+        image: "assets/coconut-latte-bottle.png",
+        imageClass: "tall",
+        spec: "300ml*1瓶",
+        photo: "cream"
+      },
+      {
+        name: "瑞幸柚C美式咖啡饮料300mL",
+        desc: "有95人换购",
+        price: 13.9,
+        originalPrice: 19,
+        image: "assets/yuzu-americano-bottle.png",
+        imageClass: "tall",
+        spec: "300ml*1瓶",
+        photo: "ice"
+      }
     ];
     let currentDetailProduct = null;
     let detailQuantity = 1;
@@ -2510,7 +2548,7 @@
         const selected = exchangeCart.find((item) => item.name === product.name);
         return `
           <article class="exchange-card" data-exchange-index="${index}">
-            <div class="exchange-visual">${product.visual}</div>
+            <div class="exchange-visual">${itemImage(product)}</div>
             <div class="exchange-name">${product.name}</div>
             <div class="exchange-count">${product.desc}</div>
             <div class="exchange-bottom">
