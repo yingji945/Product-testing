@@ -1702,7 +1702,7 @@
           <div class="option-group">
             <h2>规格</h2>
             <div class="option-grid">
-              <button class="option-card selected" type="button">300ml*1瓶<small>居家即享</small></button>
+              <button class="option-card selected" type="button"><span id="detailSpec">300ml*1瓶</span><small id="detailSpecHint">居家即享</small></button>
             </div>
           </div>
         </div>
@@ -1819,6 +1819,7 @@
             price: 12.9,
             image: "assets/coconut-latte-bottle.png",
             imageClass: "tall",
+            spec: "300ml*1瓶",
             photo: "cream"
           },
           {
@@ -1827,6 +1828,7 @@
             price: 13.9,
             image: "assets/yuzu-americano-bottle.png",
             imageClass: "tall",
+            spec: "300ml*1瓶",
             photo: "ice"
           },
           {
@@ -1834,6 +1836,7 @@
             desc: "便携咖啡液，兑水、兑奶都方便",
             price: 9.9,
             image: "assets/espresso-liquid-2.png",
+            spec: "18ml*2颗",
             photo: "ice"
           },
           {
@@ -1841,6 +1844,7 @@
             desc: "多颗组合装，适合办公室和居家囤货",
             price: 29.9,
             image: "assets/espresso-liquid-8.png",
+            spec: "18ml*8颗",
             photo: "cream"
           },
           {
@@ -1848,6 +1852,7 @@
             desc: "细腻冻干黑咖啡，冷热水均可冲调",
             price: 39.9,
             image: "assets/freeze-dried-coffee.jpg",
+            spec: "2g*18条",
             photo: "cream"
           },
           {
@@ -1855,6 +1860,7 @@
             desc: "中深烘焙咖啡豆，适合手冲和意式萃取",
             price: 59.9,
             image: "assets/coffee-beans.jpg",
+            spec: "500g*1袋",
             photo: "ice"
           }
         ]
@@ -1975,6 +1981,8 @@
     const detailDesc = document.getElementById("detailDesc");
     const detailPrice = document.getElementById("detailPrice");
     const detailQty = document.getElementById("detailQty");
+    const detailSpec = document.getElementById("detailSpec");
+    const detailSpecHint = document.getElementById("detailSpecHint");
     const orderScreen = document.getElementById("orderScreen");
     const successScreen = document.getElementById("successScreen");
     const orderItems = document.getElementById("orderItems");
@@ -2135,6 +2143,8 @@
       detailName.textContent = product.name;
       detailDesc.textContent = product.desc;
       detailPrice.textContent = formatPrice(product.price);
+      detailSpec.textContent = product.spec || "标准规格";
+      detailSpecHint.textContent = "居家即享";
       detailScreen.classList.add("show");
     }
 
