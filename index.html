@@ -1175,6 +1175,246 @@
       font-size: 18px;
     }
 
+    .detail-screen {
+      background: #fff;
+    }
+
+    .detail-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding-bottom: 132px;
+      background: #fff;
+    }
+
+    .detail-hero {
+      min-height: 324px;
+      padding: 16px 18px 0;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255, 231, 112, .72), transparent 12%),
+        radial-gradient(circle at 86% 20%, rgba(255, 229, 86, .45), transparent 10%),
+        linear-gradient(145deg, #0f4d39 0%, #0d6a4a 45%, #163b2e 100%);
+    }
+
+    .detail-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 22%, rgba(255,255,255,.16), transparent 28%),
+        radial-gradient(ellipse at 80% 5%, rgba(255,255,255,.12), transparent 24%);
+      pointer-events: none;
+    }
+
+    .detail-topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .detail-icon-btn {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.72);
+      color: #15231e;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .detail-hero-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .detail-image-stage {
+      position: relative;
+      z-index: 1;
+      height: 250px;
+      display: grid;
+      place-items: end center;
+    }
+
+    .detail-product-image {
+      width: min(68%, 240px);
+      max-height: 230px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 18px rgba(0,0,0,.28));
+    }
+
+    .detail-product-image.tall {
+      width: min(48%, 150px);
+    }
+
+    .detail-visual-wrap {
+      transform: scale(1.55);
+      filter: drop-shadow(0 18px 18px rgba(0,0,0,.22));
+    }
+
+    .detail-card {
+      position: relative;
+      margin-top: -22px;
+      border-radius: 22px 22px 0 0;
+      background: #fff;
+      padding: 28px 18px 18px;
+      z-index: 3;
+    }
+
+    .detail-title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .detail-title-row h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.14;
+      letter-spacing: 0;
+      color: #1f2530;
+    }
+
+    .detail-title-row p {
+      margin: 0;
+      color: #7d838d;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .favorite {
+      width: 54px;
+      border: 0;
+      background: transparent;
+      color: #4b5563;
+      font-size: 13px;
+      display: grid;
+      justify-items: center;
+      gap: 4px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .favorite span {
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .option-group {
+      margin-bottom: 22px;
+    }
+
+    .option-group h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #1f2530;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .option-grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .option-card {
+      min-height: 64px;
+      border: 1px solid #e6e9ee;
+      border-radius: 12px;
+      background: #fff;
+      color: #1f2530;
+      padding: 10px 12px;
+      display: grid;
+      align-content: center;
+      gap: 4px;
+      text-align: left;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .option-card small {
+      color: #9aa1ab;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .option-card.selected {
+      border-color: var(--blue);
+      background: #f0f4ff;
+      color: var(--blue);
+      box-shadow: inset 0 0 0 1px var(--blue);
+    }
+
+    .detail-foot {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,.98);
+      z-index: 25;
+      border-top: 1px solid var(--line);
+      padding: 10px 18px 16px;
+    }
+
+    .detail-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .detail-price {
+      color: #ff5c32;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .detail-price strong {
+      font-size: 28px;
+    }
+
+    .detail-actions {
+      display: grid;
+      grid-template-columns: 1fr 1.65fr;
+      gap: 12px;
+    }
+
+    .detail-add-cart,
+    .detail-buy {
+      height: 54px;
+      border: 0;
+      border-radius: 16px;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .detail-add-cart {
+      background: #f5e3bc;
+      color: #1f2530;
+    }
+
+    .detail-buy {
+      background: var(--blue);
+      color: #fff;
+    }
+
     .order-body {
       padding: 14px 14px 92px;
       overflow-y: auto;
@@ -1437,6 +1677,79 @@
       <div class="nav-item"><span class="nav-icon"></span><span>我的</span></div>
     </nav>
 
+    <section class="screen detail-screen" id="detailScreen" aria-label="商品详情页">
+      <div class="detail-scroll">
+        <div class="detail-hero">
+          <div class="detail-topbar">
+            <button class="detail-icon-btn" type="button" id="detailBack" aria-label="返回菜单">‹</button>
+            <div class="detail-hero-actions">
+              <button class="detail-icon-btn" type="button" aria-label="分享">↗</button>
+              <button class="detail-icon-btn" type="button" aria-label="更多">···</button>
+            </div>
+          </div>
+          <div class="detail-image-stage" id="detailHeroImage"></div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-title-row">
+            <div>
+              <h1 id="detailName">商品名称</h1>
+              <p id="detailDesc">商品描述</p>
+            </div>
+            <button class="favorite" type="button"><span>♡</span>保存口味</button>
+          </div>
+
+          <div class="option-group">
+            <h2>规格</h2>
+            <div class="option-grid">
+              <button class="option-card selected" type="button">单件<small>居家即享</small></button>
+              <button class="option-card" type="button">组合装<small>适合囤货</small></button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h2>温度</h2>
+            <div class="option-grid">
+              <button class="option-card selected" type="button">冰<small>推荐冰镇</small></button>
+              <button class="option-card" type="button">常温<small>开盖即饮</small></button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h2>咖啡风味</h2>
+            <div class="option-grid three">
+              <button class="option-card selected" type="button">经典风味<small>香醇口感</small></button>
+              <button class="option-card" type="button">清爽风味<small>果香轻盈</small></button>
+              <button class="option-card" type="button">浓郁风味<small>咖啡更浓</small></button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <h2>咖啡浓度</h2>
+            <div class="option-grid">
+              <button class="option-card selected" type="button">默认浓度<small>风味平衡</small></button>
+              <button class="option-card" type="button">加浓 +￥3<small>口感更厚</small></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-foot">
+        <div class="detail-summary">
+          <div class="detail-price">￥<strong id="detailPrice">0</strong></div>
+          <div class="qty">
+            <button class="qty-btn minus" type="button" id="detailMinus" aria-label="减少数量">−</button>
+            <span id="detailQty">1</span>
+            <button class="qty-btn plus" type="button" id="detailPlus" aria-label="增加数量">+</button>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <button class="detail-add-cart" type="button" id="detailAddCart">加入购物车</button>
+          <button class="detail-buy" type="button" id="detailBuy">立即购买</button>
+        </div>
+      </div>
+    </section>
+
     <section class="screen" id="orderScreen" aria-label="确认订单页面">
       <div class="page-head">
         <button class="back" type="button" id="backToMenu" aria-label="返回">‹</button>
@@ -1667,6 +1980,8 @@
     let activeCategory = "popular";
     let activeChipIndex = 0;
     let cart = [];
+    let currentDetailProduct = null;
+    let detailQuantity = 1;
 
     const productsEl = document.getElementById("products");
     const cartEl = document.getElementById("cart");
@@ -1680,6 +1995,12 @@
     const drawerPromoCount = document.getElementById("drawerPromoCount");
     const drawerBagCount = document.getElementById("drawerBagCount");
     const drawerTotal = document.getElementById("drawerTotal");
+    const detailScreen = document.getElementById("detailScreen");
+    const detailHeroImage = document.getElementById("detailHeroImage");
+    const detailName = document.getElementById("detailName");
+    const detailDesc = document.getElementById("detailDesc");
+    const detailPrice = document.getElementById("detailPrice");
+    const detailQty = document.getElementById("detailQty");
     const orderScreen = document.getElementById("orderScreen");
     const successScreen = document.getElementById("successScreen");
     const orderItems = document.getElementById("orderItems");
@@ -1713,6 +2034,13 @@
         <div class="beans"><span></span><span></span><span></span></div>
         <div class="${product.visual}"></div>
       `;
+    }
+
+    function detailImage(product) {
+      if (product.image) {
+        return `<img class="detail-product-image ${product.imageClass || ""}" src="${product.image}" alt="">`;
+      }
+      return `<div class="detail-visual-wrap">${productVisual(product)}</div>`;
     }
 
     function renderProducts(categoryKey) {
@@ -1810,14 +2138,34 @@
       cartDrawer.classList.remove("show");
     }
 
-    function addToCart(product) {
+    function addToCart(product, quantity = 1) {
       const existing = cart.find((item) => item.name === product.name);
       if (existing) {
-        existing.quantity += 1;
+        existing.quantity += quantity;
       } else {
-        cart.push({ ...product, quantity: 1 });
+        cart.push({ ...product, quantity });
       }
       updateCart();
+    }
+
+    function updateDetailQuantity(nextQuantity) {
+      detailQuantity = Math.max(1, nextQuantity);
+      detailQty.textContent = detailQuantity;
+    }
+
+    function openProductDetail(product) {
+      currentDetailProduct = product;
+      updateDetailQuantity(1);
+      closeCartDrawer();
+      detailHeroImage.innerHTML = detailImage(product);
+      detailName.textContent = product.name;
+      detailDesc.textContent = product.desc;
+      detailPrice.textContent = formatPrice(product.price);
+      detailScreen.classList.add("show");
+    }
+
+    function closeProductDetail() {
+      detailScreen.classList.remove("show");
     }
 
     function openOrder() {
@@ -1850,7 +2198,7 @@
       const addButton = event.target.closest(".add");
       if (!addButton) return;
       const product = datasets[activeCategory].products[Number(addButton.dataset.index)];
-      addToCart(product);
+      openProductDetail(product);
     });
 
     document.getElementById("checkoutBtn").addEventListener("click", openOrder);
@@ -1884,6 +2232,27 @@
         if (item.quantity <= 0) cart.splice(index, 1);
       }
       updateCart();
+    });
+    document.getElementById("detailBack").addEventListener("click", closeProductDetail);
+    document.getElementById("detailMinus").addEventListener("click", () => updateDetailQuantity(detailQuantity - 1));
+    document.getElementById("detailPlus").addEventListener("click", () => updateDetailQuantity(detailQuantity + 1));
+    document.getElementById("detailAddCart").addEventListener("click", () => {
+      if (!currentDetailProduct) return;
+      addToCart(currentDetailProduct, detailQuantity);
+      closeProductDetail();
+    });
+    document.getElementById("detailBuy").addEventListener("click", () => {
+      if (!currentDetailProduct) return;
+      addToCart(currentDetailProduct, detailQuantity);
+      closeProductDetail();
+      openOrder();
+    });
+    detailScreen.addEventListener("click", (event) => {
+      const option = event.target.closest(".option-card");
+      if (!option) return;
+      const group = option.closest(".option-group");
+      group.querySelectorAll(".option-card").forEach((button) => button.classList.remove("selected"));
+      option.classList.add("selected");
     });
     document.getElementById("backToMenu").addEventListener("click", () => orderScreen.classList.remove("show"));
     document.getElementById("submitOrder").addEventListener("click", () => {
