@@ -2228,6 +2228,8 @@
             image: "assets/coconut-latte-bottle.png",
             imageClass: "tall",
             spec: "300ml*1瓶",
+            tags: ["低糖", "100%冷榨椰肉汁"],
+            menuDesc: "喝前摇一摇，感受椰肉清甜香气",
             photo: "cream"
           },
           {
@@ -2237,6 +2239,8 @@
             image: "assets/yuzu-americano-bottle.png",
             imageClass: "tall",
             spec: "300ml*1瓶",
+            tags: ["100%阿拉比咖啡豆", "甄选南非红西柚"],
+            menuDesc: "喝前摇一摇，入口感受清爽回味",
             photo: "ice"
           },
           {
@@ -2245,6 +2249,8 @@
             price: 9.9,
             image: "assets/espresso-liquid-2.png",
             spec: "18ml*2颗",
+            tags: ["尝新试喝", "0糖0脂"],
+            menuDesc: "14倍高浓醇，百搭首选",
             photo: "ice"
           },
           {
@@ -2253,6 +2259,8 @@
             price: 29.9,
             image: "assets/espresso-liquid-8.png",
             spec: "18ml*8颗",
+            tags: ["0糖0脂", "冷热瞬融"],
+            menuDesc: "14倍高浓醇，百搭首选",
             photo: "cream"
           },
           {
@@ -2261,6 +2269,8 @@
             price: 39.9,
             image: "assets/freeze-dried-coffee.jpg",
             spec: "2g*18条",
+            tags: ["大颗粒", "大香气"],
+            menuDesc: "多孔蜂窝大颗粒，保留更多香气和油脂",
             photo: "cream"
           },
           {
@@ -2269,6 +2279,8 @@
             price: 59.9,
             image: "assets/coffee-beans.jpg",
             spec: "500g*1袋",
+            tags: ["Boram Um推荐", "2021 IIAC金奖豆"],
+            menuDesc: "瑞幸经典风格，平衡百搭",
             photo: "ice"
           }
         ]
@@ -2495,8 +2507,8 @@
             ${productVisual(product)}
             <div class="info">
               <div class="name">${product.name}</div>
-              <div class="product-tags"><span>可选黑巧风味加浓</span><span>多款奶基可选</span></div>
-              <div class="desc">喝前摇一摇，自定义更多隐藏喝法</div>
+              <div class="product-tags">${(product.tags || ["可选黑巧风味加浓", "多款奶基可选"]).map((tag) => `<span>${tag}</span>`).join("")}</div>
+              <div class="desc">${product.menuDesc || "喝前摇一摇，自定义更多隐藏喝法"}</div>
               <div class="price-row">
                 <div class="price">¥ <strong>${formatPrice(product.price)}</strong></div>
                 <button class="add" type="button" data-index="${productIndex}" aria-label="加入购物袋">+</button>
