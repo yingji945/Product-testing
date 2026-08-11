@@ -1416,7 +1416,7 @@
     }
 
     .order-body {
-      padding: 12px 14px 118px;
+      padding: 12px 14px 160px;
       overflow-y: auto;
       flex: 1;
       background: #eef1fb;
@@ -1681,6 +1681,38 @@
       line-height: 1;
     }
 
+    .exchange-qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1f2530;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .exchange-qty button {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .exchange-qty .minus {
+      border: 1px solid #c8cdd5;
+      background: #fff;
+      color: #8a9099;
+    }
+
+    .exchange-qty .plus {
+      border: 0;
+      background: var(--blue);
+      color: #fff;
+    }
+
     .discount-row {
       display: flex;
       justify-content: space-between;
@@ -1708,6 +1740,62 @@
 
     .discount-row .saving {
       color: #ff5c32;
+    }
+
+    .card-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px dashed #edf0f4;
+      font-size: 17px;
+      color: #1f2530;
+      font-weight: 900;
+    }
+
+    .card-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .card-row span {
+      color: #9aa1ab;
+      font-weight: 700;
+    }
+
+    .dining-options {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #1f2530;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .radio-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--blue);
+      display: inline-grid;
+      place-items: center;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .radio-dot.active {
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .order-tip {
+      color: #9aa1ab;
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 0 4px 20px;
     }
 
     .field {
@@ -1777,6 +1865,15 @@
     .total span {
       color: #ff5c32;
       font-weight: 800;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .stock-note {
+      color: #e85a38;
+      font-size: 13px;
+      font-weight: 800;
+      margin-top: 3px;
     }
 
     .success {
@@ -2010,37 +2107,33 @@
             <h2>超值换购</h2>
             <span>近期有572人换购</span>
           </div>
-          <div class="exchange-scroller" id="exchangeItems">
-            <button class="exchange-card" type="button" data-name="抹茶乳酪贝果" data-price="5.9">
-              <div class="exchange-visual">🍵</div>
-              <div class="exchange-name">抹茶乳酪贝果</div>
-              <div class="exchange-count">有56人换购</div>
-              <div class="exchange-bottom"><span class="exchange-price">¥<strong>5.9</strong></span><span class="exchange-add">+</span></div>
-            </button>
-            <button class="exchange-card" type="button" data-name="巴斯克芝士吐司" data-price="4.9">
-              <div class="exchange-visual">🍞</div>
-              <div class="exchange-name">巴斯克芝士吐司</div>
-              <div class="exchange-count">有104人换购</div>
-              <div class="exchange-bottom"><span class="exchange-price">¥<strong>4.9</strong></span><span class="exchange-add">+</span></div>
-            </button>
-            <button class="exchange-card" type="button" data-name="蜂蜜云朵蛋糕" data-price="2.9">
-              <div class="exchange-visual">🍯</div>
-              <div class="exchange-name">蜂蜜云朵蛋糕</div>
-              <div class="exchange-count">有95人换购</div>
-              <div class="exchange-bottom"><span class="exchange-price">¥<strong>2.9</strong></span><span class="exchange-add">+</span></div>
-            </button>
-          </div>
+          <div class="exchange-scroller" id="exchangeItems"></div>
         </section>
 
         <section class="order-block">
           <h2>瑞幸优惠 <span class="note">已为您选择最佳优惠</span></h2>
           <div class="discount-row"><span>咖啡卡券</span><strong class="saving" id="orderDiscount">-￥0</strong></div>
+          <div class="discount-row"><span>加购价</span><strong class="saving" id="exchangeDiscount">-￥0</strong></div>
           <div class="discount-row"><span>瑞王卡·当单可用</span><strong>首月￥0.01</strong></div>
         </section>
+
+        <section class="order-block">
+          <div class="card-row"><strong>支付方式</strong><span>微信支付 〉</span></div>
+        </section>
+
+        <section class="order-block">
+          <div class="card-row">
+            <strong>取餐方式</strong>
+            <div class="dining-options"><span><i class="radio-dot active">✓</i>店内用餐</span><span><i class="radio-dot"></i>自提带走</span></div>
+          </div>
+          <div class="card-row"><strong>备注特殊要求</strong><span>〉</span></div>
+        </section>
+
+        <p class="order-tip">温馨提示：建议您按需点单，杜绝浪费。本单仅支持开具电子发票，订单完成后可前往发票管理中开具。</p>
       </div>
       <div class="order-foot">
-        <div class="total"><strong id="orderTotal">¥0</strong><span id="orderSaved">已优惠¥0</span></div>
-        <button class="pay" type="button" id="submitOrder">0元下单</button>
+        <div class="total"><strong id="orderTotal">¥0</strong><span id="orderSaved">已优惠¥0</span><div class="stock-note">商品即将售罄</div></div>
+        <button class="pay" type="button" id="submitOrder">提交订单</button>
       </div>
     </section>
 
@@ -2243,6 +2336,12 @@
     let activeCategory = "popular";
     let activeChipIndex = 0;
     let cart = [];
+    let exchangeCart = [];
+    const exchangeProducts = [
+      { name: "抹茶乳酪贝果", desc: "有56人换购", price: 5.9, originalPrice: 9, visual: "🍵" },
+      { name: "巴斯克芝士吐司", desc: "有104人换购", price: 4.9, originalPrice: 7, visual: "🍞" },
+      { name: "蜂蜜云朵蛋糕", desc: "有95人换购", price: 2.9, originalPrice: 5, visual: "🍯" }
+    ];
     let currentDetailProduct = null;
     let detailQuantity = 1;
 
@@ -2271,6 +2370,7 @@
     const orderItems = document.getElementById("orderItems");
     const orderTotal = document.getElementById("orderTotal");
     const orderDiscount = document.getElementById("orderDiscount");
+    const exchangeDiscount = document.getElementById("exchangeDiscount");
     const orderSaved = document.getElementById("orderSaved");
     const submitOrder = document.getElementById("submitOrder");
 
@@ -2295,6 +2395,9 @@
     }
 
     function drawerImage(product) {
+      if (product.visual && product.visual.length <= 2 && !product.image) {
+        return `<div class="exchange-visual">${product.visual}</div>`;
+      }
       if (product.image) {
         return `<img class="${product.imageClass || ""}" src="${product.image}" alt="">`;
       }
@@ -2402,6 +2505,29 @@
       `).join("");
     }
 
+    function renderExchangeItems() {
+      document.getElementById("exchangeItems").innerHTML = exchangeProducts.map((product, index) => {
+        const selected = exchangeCart.find((item) => item.name === product.name);
+        return `
+          <article class="exchange-card" data-exchange-index="${index}">
+            <div class="exchange-visual">${product.visual}</div>
+            <div class="exchange-name">${product.name}</div>
+            <div class="exchange-count">${product.desc}</div>
+            <div class="exchange-bottom">
+              <span class="exchange-price">¥<strong>${formatPrice(product.price)}</strong> <s>¥${formatPrice(product.originalPrice)}</s></span>
+              ${selected ? `
+                <span class="exchange-qty">
+                  <button class="minus" type="button" data-action="minus" data-exchange-index="${index}" aria-label="减少换购数量">−</button>
+                  ${selected.quantity}
+                  <button class="plus" type="button" data-action="plus" data-exchange-index="${index}" aria-label="增加换购数量">+</button>
+                </span>
+              ` : `<button class="exchange-add" type="button" data-action="plus" data-exchange-index="${index}" aria-label="加入换购">+</button>`}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
     function openCartDrawer() {
       if (cart.length === 0) return;
       cartShade.classList.add("show");
@@ -2421,6 +2547,20 @@
         cart.push({ ...product, quantity });
       }
       updateCart();
+    }
+
+    function updateExchangeCart(product, delta) {
+      const existing = exchangeCart.find((item) => item.name === product.name);
+      if (existing) {
+        existing.quantity += delta;
+        if (existing.quantity <= 0) {
+          exchangeCart = exchangeCart.filter((item) => item.name !== product.name);
+        }
+      } else if (delta > 0) {
+        exchangeCart.push({ ...product, spec: "1份", quantity: delta });
+      }
+      renderExchangeItems();
+      renderOrder();
     }
 
     function updateDetailQuantity(nextQuantity) {
@@ -2448,29 +2588,38 @@
     function openOrder() {
       if (cart.length === 0) return;
       closeCartDrawer();
-      const rawTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      const discount = Math.min(20, rawTotal);
+      renderExchangeItems();
+      renderOrder();
+      orderScreen.classList.add("show");
+    }
+
+    function renderOrder() {
+      const allItems = [...cart, ...exchangeCart];
+      const rawTotal = allItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const mainTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const discount = Math.min(6.6, mainTotal);
+      const exchangeSaving = exchangeCart.reduce((sum, item) => sum + ((item.originalPrice || item.price) - item.price) * item.quantity, 0);
       const total = Math.max(0, rawTotal - discount);
-      orderItems.innerHTML = cart.map((item) => `
+      orderItems.innerHTML = allItems.map((item) => `
         <article class="order-product">
           <div class="order-thumb">${itemImage(item)}</div>
           <div>
             <div class="order-product-name">${item.name}</div>
             <div class="order-product-spec">${item.spec || "标准规格"} / 居家即享</div>
-            <span class="order-coupon-tag">咖啡卡券</span>
+            <span class="order-coupon-tag">${exchangeCart.some((exchange) => exchange.name === item.name) ? "加购价" : "咖啡卡券"}</span>
           </div>
           <div class="order-product-side">
             <strong>¥${formatPrice(item.price * item.quantity)}</strong>
-            <s>¥${formatPrice((item.price + 20) * item.quantity)}</s>
+            <s>¥${formatPrice((item.originalPrice || item.price + 20) * item.quantity)}</s>
             <span>x${item.quantity}</span>
           </div>
         </article>
       `).join("");
       orderTotal.textContent = `¥${formatPrice(total)}`;
       orderDiscount.textContent = `-￥${formatPrice(discount)}`;
-      orderSaved.textContent = `已优惠¥${formatPrice(discount)}`;
-      submitOrder.textContent = `${formatPrice(total)}元下单`;
-      orderScreen.classList.add("show");
+      exchangeDiscount.textContent = `-￥${formatPrice(exchangeSaving)}`;
+      orderSaved.textContent = `已优惠¥${formatPrice(discount + exchangeSaving)}`;
+      submitOrder.textContent = "提交订单";
     }
 
     document.querySelectorAll(".category").forEach((button) => {
@@ -2525,17 +2674,11 @@
       updateCart();
     });
     document.getElementById("exchangeItems").addEventListener("click", (event) => {
-      const card = event.target.closest(".exchange-card");
-      if (!card) return;
-      addToCart({
-        name: card.dataset.name,
-        desc: "超值换购商品",
-        price: Number(card.dataset.price),
-        spec: "1份",
-        visual: "latte",
-        photo: "cream"
-      });
-      openOrder();
+      const action = event.target.closest("[data-action]");
+      if (!action) return;
+      const product = exchangeProducts[Number(action.dataset.exchangeIndex)];
+      if (!product) return;
+      updateExchangeCart(product, action.dataset.action === "plus" ? 1 : -1);
     });
     document.getElementById("detailBack").addEventListener("click", closeProductDetail);
     document.getElementById("detailMinus").addEventListener("click", () => updateDetailQuantity(detailQuantity - 1));
