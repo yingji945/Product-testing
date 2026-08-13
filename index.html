@@ -732,6 +732,19 @@
       font-size: 20px;
     }
 
+    .price .estimate {
+      margin-left: 3px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .price s {
+      margin-left: 4px;
+      color: #a6adb7;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .add {
       width: 29px;
       height: 29px;
@@ -2224,7 +2237,8 @@
           {
             name: "瑞幸生椰拿铁咖啡饮料300mL",
             desc: "开盖即饮，生椰乳香与咖啡香平衡融合",
-            price: 12.9,
+            price: 6,
+            originalPrice: 9.9,
             image: "assets/coconut-latte-bottle.png",
             imageClass: "tall",
             spec: "300ml*1瓶",
@@ -2235,7 +2249,8 @@
           {
             name: "瑞幸柚C美式咖啡饮料300mL",
             desc: "清爽柚香与美式咖啡融合，适合冰镇即饮",
-            price: 13.9,
+            price: 6,
+            originalPrice: 9.9,
             image: "assets/yuzu-americano-bottle.png",
             imageClass: "tall",
             spec: "300ml*1瓶",
@@ -2246,7 +2261,8 @@
           {
             name: "醇香浓缩咖啡液·意式风味2颗",
             desc: "便携咖啡液，兑水、兑奶都方便",
-            price: 9.9,
+            price: 4.5,
+            originalPrice: 9.9,
             image: "assets/espresso-liquid-2.png",
             spec: "18ml*2颗",
             tags: ["尝新试喝", "0糖0脂"],
@@ -2256,7 +2272,8 @@
           {
             name: "醇香浓缩咖啡液·意式风味8颗",
             desc: "多颗组合装，适合办公室和居家囤货",
-            price: 29.9,
+            price: 19.9,
+            originalPrice: 29.9,
             image: "assets/espresso-liquid-8.png",
             spec: "18ml*8颗",
             tags: ["0糖0脂", "冷热瞬融"],
@@ -2266,7 +2283,8 @@
           {
             name: "大师经典冻干黑咖啡2g*18条",
             desc: "细腻冻干黑咖啡，冷热水均可冲调",
-            price: 39.9,
+            price: 35.9,
+            originalPrice: 35.9,
             image: "assets/freeze-dried-coffee.jpg",
             spec: "2g*18条",
             tags: ["大颗粒", "大香气"],
@@ -2276,7 +2294,8 @@
           {
             name: "意式拼配咖啡豆500g",
             desc: "中深烘焙咖啡豆，适合手冲和意式萃取",
-            price: 59.9,
+            price: 69,
+            originalPrice: 89,
             image: "assets/coffee-beans.jpg",
             spec: "500g*1袋",
             tags: ["Boram Um推荐", "2021 IIAC金奖豆"],
@@ -2385,8 +2404,8 @@
       {
         name: "醇香浓缩咖啡液·意式风味2颗",
         desc: "有56人换购",
-        price: 9.9,
-        originalPrice: 19.9,
+        price: 4.5,
+        originalPrice: 9.9,
         image: "assets/espresso-liquid-2.png",
         spec: "18ml*2颗",
         photo: "ice"
@@ -2394,8 +2413,8 @@
       {
         name: "瑞幸生椰拿铁咖啡饮料300mL",
         desc: "有104人换购",
-        price: 12.9,
-        originalPrice: 18,
+        price: 6,
+        originalPrice: 9.9,
         image: "assets/coconut-latte-bottle.png",
         imageClass: "tall",
         spec: "300ml*1瓶",
@@ -2404,8 +2423,8 @@
       {
         name: "瑞幸柚C美式咖啡饮料300mL",
         desc: "有95人换购",
-        price: 13.9,
-        originalPrice: 19,
+        price: 6,
+        originalPrice: 9.9,
         image: "assets/yuzu-americano-bottle.png",
         imageClass: "tall",
         spec: "300ml*1瓶",
@@ -2510,7 +2529,7 @@
               <div class="product-tags">${(product.tags || ["可选黑巧风味加浓", "多款奶基可选"]).map((tag) => `<span>${tag}</span>`).join("")}</div>
               <div class="desc">${product.menuDesc || "喝前摇一摇，自定义更多隐藏喝法"}</div>
               <div class="price-row">
-                <div class="price">¥ <strong>${formatPrice(product.price)}</strong></div>
+                <div class="price">¥<strong>${formatPrice(product.price)}</strong><span class="estimate">预估到手</span>${product.originalPrice ? `<s>¥${formatPrice(product.originalPrice)}</s>` : ""}</div>
                 <button class="add" type="button" data-index="${productIndex}" aria-label="加入购物袋">+</button>
               </div>
             </div>
