@@ -1587,16 +1587,6 @@
       margin-bottom: 8px;
     }
 
-    .order-coupon-tag {
-      display: inline-flex;
-      padding: 4px 7px;
-      border-radius: 4px;
-      background: #fff1ea;
-      color: #e85a38;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
     .order-product-side {
       text-align: right;
       align-self: start;
@@ -2157,9 +2147,7 @@
 
         <section class="order-block">
           <h2>瑞幸优惠 <span class="note">已为您选择最佳优惠</span></h2>
-          <div class="discount-row"><span>咖啡卡券</span><strong class="saving" id="orderDiscount">-￥0</strong></div>
-          <div class="discount-row"><span>加购价</span><strong class="saving" id="exchangeDiscount">-￥0</strong></div>
-          <div class="discount-row"><span>瑞王卡·当单可用</span><strong>首月￥0.01</strong></div>
+          <div class="discount-row"><span>商品优惠</span><strong class="saving" id="orderDiscount">-￥0</strong></div>
         </section>
 
         <section class="order-block">
@@ -2459,7 +2447,6 @@
     const orderItems = document.getElementById("orderItems");
     const orderTotal = document.getElementById("orderTotal");
     const orderDiscount = document.getElementById("orderDiscount");
-    const exchangeDiscount = document.getElementById("exchangeDiscount");
     const orderSaved = document.getElementById("orderSaved");
     const submitOrder = document.getElementById("submitOrder");
 
@@ -2686,29 +2673,27 @@
     function renderOrder() {
       const allItems = [...cart, ...exchangeCart];
       const rawTotal = allItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      const mainTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      const discount = Math.min(6.6, mainTotal);
-      const exchangeSaving = exchangeCart.reduce((sum, item) => sum + ((item.originalPrice || item.price) - item.price) * item.quantity, 0);
-      const total = Math.max(0, rawTotal - discount);
+      const discount = allItems.reduce((sum, item) => {
+        const originalPrice = item.originalPrice || item.price;
+        return sum + Math.max(0, originalPrice - item.price) * item.quantity;
+      }, 0);
       orderItems.innerHTML = allItems.map((item) => `
         <article class="order-product">
           <div class="order-thumb">${itemImage(item)}</div>
           <div>
             <div class="order-product-name">${item.name}</div>
             <div class="order-product-spec">${item.spec || "标准规格"} / 居家即享</div>
-            <span class="order-coupon-tag">${exchangeCart.some((exchange) => exchange.name === item.name) ? "加购价" : "咖啡卡券"}</span>
           </div>
           <div class="order-product-side">
             <strong>¥${formatPrice(item.price * item.quantity)}</strong>
-            <s>¥${formatPrice((item.originalPrice || item.price + 20) * item.quantity)}</s>
+            ${item.originalPrice && item.originalPrice > item.price ? `<s>¥${formatPrice(item.originalPrice * item.quantity)}</s>` : ""}
             <span>x${item.quantity}</span>
           </div>
         </article>
       `).join("");
-      orderTotal.textContent = `¥${formatPrice(total)}`;
+      orderTotal.textContent = `¥${formatPrice(rawTotal)}`;
       orderDiscount.textContent = `-￥${formatPrice(discount)}`;
-      exchangeDiscount.textContent = `-￥${formatPrice(exchangeSaving)}`;
-      orderSaved.textContent = `已优惠¥${formatPrice(discount + exchangeSaving)}`;
+      orderSaved.textContent = `已优惠¥${formatPrice(discount)}`;
       submitOrder.textContent = "提交订单";
     }
 
