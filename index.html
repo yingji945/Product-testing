@@ -2746,7 +2746,7 @@
     function renderFulfillmentCard() {
       if (fulfillmentMode === "delivery") {
         fulfillmentCard.innerHTML = `
-          <div class="pickup-tabs"><span data-fulfillment="pickup">自提</span><span class="active" data-fulfillment="delivery">外送</span></div>
+          <div class="pickup-tabs"><span>自提</span><span class="active">外送</span></div>
           <div class="pickup-content">
             <div class="store-line">${selectedDeliveryAddress.title} 〉</div>
             <div class="store-address">${selectedDeliveryAddress.contact}</div>
@@ -2758,7 +2758,7 @@
         successText.textContent = "已提交外送订单，骑手接单后将送达所选收货地址。";
       } else {
         fulfillmentCard.innerHTML = `
-          <div class="pickup-tabs"><span class="active" data-fulfillment="pickup">自提</span><span data-fulfillment="delivery">外送</span></div>
+          <div class="pickup-tabs"><span class="active">自提</span><span>外送</span></div>
           <div class="pickup-content">
             <div class="store-line"><span class="buy-tag">买过</span>城奥大厦店 〉</div>
             <div class="store-address">朝阳区安定路5号城奥大厦一层大堂</div>
@@ -3029,15 +3029,6 @@
       const address = event.target.closest("[data-address-index]");
       if (!address) return;
       selectDeliveryAddress(Number(address.dataset.addressIndex));
-    });
-    fulfillmentCard.addEventListener("click", (event) => {
-      const tab = event.target.closest("[data-fulfillment]");
-      if (!tab) return;
-      if (tab.dataset.fulfillment === "delivery") {
-        openDeliverySelection();
-      } else {
-        setPickupMode();
-      }
     });
 
     document.querySelectorAll(".category").forEach((button) => {
